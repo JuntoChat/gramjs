@@ -24,12 +24,6 @@ export class MarkdownV2Parser {
         // Spoiler
         message = message.replace(/\|\|(.*?)\|\|/g, "<spoiler>$1</spoiler>");
 
-        // Inline URL
-        message = message.replace(
-            /(?<!\!)\[([^\]]+)\]\(([^)]+)\)/g,
-            '<a href="$2">$1</a>'
-        );
-
         // Emoji
         message = message.replace(
             /!\[([^\]]+)\]\(tg:\/\/emoji\?id=(\d+)\)/g,
